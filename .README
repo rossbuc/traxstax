@@ -1,3 +1,21 @@
-## TraxStax 
+# TraxStax 
 
-#MVP
+## MVP
+
+The Traxstax site is a community in which users can keep track of the songs they're playing at the moment in the form of tracklists, to enable this the _User_ will be able to:
+
+* Create a new _Tracklist_.
+* Add a _Song_ to the _Tracklist_.
+* Remove a _Song_ from the _Tracklist_.
+* Delete a _Tracklist_.
+* Add a _Song_ to the database.
+
+
+## Possible Extensions
+
+Once the basic functionality of the app is achieved, possible enhancements include:
+
+* Enable _Users_ to follow eachothers _Tracklists_.
+    * This will assign the _Tracklist_ to the _User_ but the user will not be able to edit the _Tracklist_.
+* Emable _Users_ to delete a _Song_ from the database if their id is the user_id associated with the _Song_.
+* Include a comments section at the bottom of each _Tracklist_ in which _User_ can discuss what they think of the songs.
