@@ -15,4 +15,7 @@ from models.song import Song
 from models.tracklist import Tracklist
 from models.tracklists import Tracklists
 
+from controllers.user_controller import users_blueprint
+
+app.register_blueprint(users_blueprint)
 

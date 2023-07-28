@@ -1,6 +1,6 @@
-# TraxStax 
+# TraxStax #
 
-## MVP
+## MVP ##
 
 The Traxstax site is a community in which users can keep track of the songs they're playing at the moment in the form of tracklists, to enable this the _User_ will be able to:
 
@@ -11,7 +11,7 @@ The Traxstax site is a community in which users can keep track of the songs they
 * Add a _Song_ to the database.
 
 
-## Possible Extensions
+## Possible Extensions ##
 
 Once the basic functionality of the app is achieved, possible enhancements include:
 
