@@ -9,13 +9,21 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://rossbuchan@localhost:5432/
 app.config["SQLALCHEMY_ECHO"] = True
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-
-from models.user import User
-from models.song import Song
-from models.tracklist import Tracklist
-from models.tracklists import Tracklists
+from seed import seed
+app.cli.add_command(seed)
 
 from controllers.user_controller import users_blueprint
+from controllers.song_controller import songs_blueprint
+from controllers.tracklist_controller import tracklist_blueprint
 
 app.register_blueprint(users_blueprint)
+app.register_blueprint(songs_blueprint)
+app.register_blueprint(tracklist_blueprint)
 
+
+@app.route('/')
+def home():
+    return render_template("index.jinja")
+
+if __name__ == '__main__':
+    app.run(debug=True)
