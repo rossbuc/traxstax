@@ -10,7 +10,10 @@ users_blueprint = Blueprint("users", __name__)
 @users_blueprint.route("/users/<id>")
 def user(id):
     user = User.query.get(id)
-    user_add = User(username="rosbuc", password="12345678", profile_image="z", bio="The first user")
-    db.session.add(user_add)
-    db.session.commit()
     return render_template("users/user.jinja", user=user)
+
+@users_blueprint.route("/users/<id>/tracklists")
+def user_tracklits(id):
+    # user = User.query.get(id)
+    # tracklists = Tracklists.query.all().filter(user.id == id)
+    return render_template("users/user_tracklists.jinja")

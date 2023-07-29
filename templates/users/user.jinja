@@ -1,11 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>traxstax</title>
-</head>
-<body>
-    <h1>You've got your user!!!</h1>
-</body>
-</html>
+{% extends './base.jinja' %} {% block content %}
+    <section>
+        <div>insert profile_image here</div>
+        <div>
+            <ul>
+                <li>Username</li>
+                <li>Bio</li>
+            </ul>
+        </div>
+    </section>
+    <div>
+        <nav>
+            <ul>
+                <li>Uploads</li>
+                <li>Tracklists</li>
+                <li>Friends</li>
+                <li>Settings</li>
+            </ul>
+        </nav>
+        <div>
+            {% block content_inner %}
+                
+            {% endblock %}
+        </div>
+    </div>
+{% endblock content %}
