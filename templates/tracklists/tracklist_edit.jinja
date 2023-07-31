@@ -1,11 +1,11 @@
-{% extends 'base.jinja' %} {% block content %}
-    <form action="/users/1/tracklists" method="POST">
+{% extends "base.jinja" %} {% block content %}
+    <form action="/users/1/tracklists/{{ tracklist.id }}" method="POST">
         <label for="title">Tracklist Title</label>
-        <input type="text" name="title" id="title">
+        <input type="text" name="title" id="title" value="{{ tracklist.name }}">
         <label for="cover_image">Cover Image</label>
-        <input type="text" name="cover_image" id="cover_image">
+        <input type="text" name="cover_image" id="cover_image" value="{{ tracklist.cover_image }}">
         <label for="public">Public</label>
-        <input type="radio" name="private_public" id="public">
+        <input type="radio" name="private_public" id="public" value="{{ tracklist.public }}">
         <label for="private">Private</label>
         <input type="radio" name="private_public" id="private">
         <label for="songs">Add Tracks</label>
@@ -14,6 +14,6 @@
                 <option value="{{ song.id }}"> {{ song.name }}</option>
             {% endfor %}
         </select> #}
-        <button type="submit">Create Tracklist</button>
+        <button type="submit">Save Changes</button>
     </form>
-{% endblock %}
+{% endblock content %}
