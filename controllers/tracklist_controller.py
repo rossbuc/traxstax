@@ -46,8 +46,11 @@ def update_tracklist(id, tracklist_id):
     public = "on" in request.form['private_public']
     songs = Song.query.all()
     selected_songs = []
-    for i in range(1, len(songs) + 1):
-        selected_songs.append(request.form[f'{i}'])
+    for index in range(1, len(songs) + 1):
+        try:
+            selected_songs.append(request.form[f'{index}'])
+        except KeyError:
+            continue
 
     for song in selected_songs:
         song_id = int(song)

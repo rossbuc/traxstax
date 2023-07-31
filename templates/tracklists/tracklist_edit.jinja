@@ -15,7 +15,7 @@
             {% if song.id not in selected_songs %}
                 {{ song }}
                 <label for="{{ song.name }}">{{ song.name }}</label>
-                <input type="checkbox" id="{{ song.name }}" name="{{ song.id }}" value="{{ song.id }}">  
+                <input type="checkbox" id="{{ song.name }}" name="song" value="{{ song.id }}">  
             {% endif %}
             </div>
         {% endfor %}
