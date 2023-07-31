@@ -27,12 +27,14 @@ def create_tracklist(id):
 @tracklist_blueprint.route("/users/<id>/tracklists/<tracklist_id>")
 def show_tracklist(id, tracklist_id):
     tracklist = Tracklist.query.get(tracklist_id)
-    return render_template("tracklists/tracklist_show.jinja", tracklist=tracklist, id=id)
+    songs = Song.query.join(Tracklists).filter(Tracklists.tracklist_id == tracklist_id)
+    return render_template("tracklists/tracklist_show.jinja", tracklist=tracklist, id=id, songs=songs)
 
 @tracklist_blueprint.route("/users/<id>/tracklists/edit/<tracklist_id>")
 def edit_tracklist(id, tracklist_id):
     tracklist = Tracklist.query.get(tracklist_id)
-    return render_template("tracklists/tracklist_edit.jinja", tracklist=tracklist, id=id)
+    songs = Song.query.all()
+    return render_template("tracklists/tracklist_edit.jinja", tracklist=tracklist, id=id, songs=songs)
 
 @tracklist_blueprint.route("/users/<id>/tracklists/<tracklist_id>", methods=['POST'])
 def update_tracklist(id, tracklist_id):
@@ -40,7 +42,17 @@ def update_tracklist(id, tracklist_id):
     cover_image = request.form['cover_image']
     user_id = id
     public = "on" in request.form['private_public']
-    
+    songs = Song.query.all()
+    selected_songs = []
+    for i in range(1, len(songs) + 1):
+        selected_songs.append(request.form[f'{i}'])
+
+    for song in selected_songs:
+        song_id = int(song)
+        tracklist_entry = Tracklists(tracklist_id=tracklist_id, song_id=song_id)
+        db.session.add(tracklist_entry)
+        db.session.commit()
+
     tracklist = Tracklist.query.get(tracklist_id)
 
     tracklist.name = name

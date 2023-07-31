@@ -1,5 +1,13 @@
 {% extends 'base.jinja' %} {% block content %}
     <h1>Tracklist</h1>
+    <ul>
+        {% for song in songs %}
+        <li>
+        <h3>{{ song.name }}</h3>
+        <h4>{{ song.artist }}</h4>
+        </li>
+        {% endfor %}
+    </ul>
     <form action="/users/1/tracklists/edit/{{ tracklist.id }}">
         <button type="submit">Edit Tracklist</button>
     </form>

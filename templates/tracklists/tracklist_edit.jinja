@@ -9,11 +9,13 @@
         <label for="private">Private</label>
         <input type="radio" name="private_public" id="private">
         <label for="songs">Add Tracks</label>
-        {# <select name="songs" id="songs" multiple>
-            {% for song in songs %}
-                <option value="{{ song.id }}"> {{ song.name }}</option>
-            {% endfor %}
-        </select> #}
+        
+        {% for song in songs %}
+            <div>
+                <label for="{{ song.name }}">{{ song.name }}</label>
+                <input type="checkbox" id="{{ song.name }}" name="{{ song.id }}" value="{{ song.id }}">
+            </div>
+        {% endfor %}
         <button type="submit">Save Changes</button>
     </form>
 {% endblock content %}
