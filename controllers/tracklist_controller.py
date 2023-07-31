@@ -34,7 +34,9 @@ def show_tracklist(id, tracklist_id):
 def edit_tracklist(id, tracklist_id):
     tracklist = Tracklist.query.get(tracklist_id)
     songs = Song.query.all()
-    return render_template("tracklists/tracklist_edit.jinja", tracklist=tracklist, id=id, songs=songs)
+    tracklist_songs = Tracklists.query.filter(Tracklists.tracklist_id == tracklist_id)
+    selected_songs = [song.song_id for song in tracklist_songs]
+    return render_template("tracklists/tracklist_edit.jinja", tracklist=tracklist, id=id, songs=songs, selected_songs=selected_songs)
 
 @tracklist_blueprint.route("/users/<id>/tracklists/<tracklist_id>", methods=['POST'])
 def update_tracklist(id, tracklist_id):
