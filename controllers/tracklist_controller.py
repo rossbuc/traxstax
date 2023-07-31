@@ -24,3 +24,8 @@ def create_tracklist(id):
     db.session.add(tracklist_to_create)
     db.session.commit()
     return redirect("/users/1/tracklists")
+
+@tracklist_blueprint.route("/users/<id>/tracklists/<tracklist_id>")
+def show_tracklist(id, tracklist_id):
+    tracklist = Tracklist.query.get(tracklist_id)
+    return render_template("tracklists/tracklist_show.jinja", tracklist=tracklist, id=id)

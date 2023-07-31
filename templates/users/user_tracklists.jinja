@@ -2,7 +2,7 @@
     <h2>Tracklist are gonna go here!</h2>
     {% for tracklist in tracklists %}
         <div>
-            <p>{{ tracklist.name }}</p>
+            <a href="/users/1/tracklists/ {{ tracklist.id }}">{{ tracklist.name }}</a>
         </div>
     {% endfor %}
     <form action="/users/1/tracklists/new">
