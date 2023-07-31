@@ -7,12 +7,12 @@ from app import db
 
 tracklist_blueprint = Blueprint("tracklists", __name__)
 
-@tracklist_blueprint.route("/users/<id>/tracklists/new")
+@tracklist_blueprint.route("/traxstax/<id>/tracklists/new")
 def new_tracklist(id):
     songs = Song.query.all()
     return render_template("tracklists/tracklist_new.jinja", songs=songs, id=id)
 
-@tracklist_blueprint.route("/users/<id>/tracklists", methods=['POST'])
+@tracklist_blueprint.route("/traxstax/<id>/tracklists", methods=['POST'])
 def create_tracklist(id):
     name = request.form['title']
     cover_image = request.form['cover_image']
@@ -22,15 +22,15 @@ def create_tracklist(id):
     print(tracklist_to_create)
     db.session.add(tracklist_to_create)
     db.session.commit()
-    return redirect("/users/1/tracklists")
+    return redirect(f"/traxstax/{id}/tracklists")
 
-@tracklist_blueprint.route("/users/<id>/tracklists/<tracklist_id>")
+@tracklist_blueprint.route("/traxstax/<id>/tracklists/<tracklist_id>")
 def show_tracklist(id, tracklist_id):
     tracklist = Tracklist.query.get(tracklist_id)
     songs = Song.query.join(Tracklists).filter(Tracklists.tracklist_id == tracklist_id)
     return render_template("tracklists/tracklist_show.jinja", tracklist=tracklist, id=id, songs=songs)
 
-@tracklist_blueprint.route("/users/<id>/tracklists/edit/<tracklist_id>")
+@tracklist_blueprint.route("/traxstax/<id>/tracklists/edit/<tracklist_id>")
 def edit_tracklist(id, tracklist_id):
     tracklist = Tracklist.query.get(tracklist_id)
     songs = Song.query.all()
@@ -38,7 +38,7 @@ def edit_tracklist(id, tracklist_id):
     selected_songs = [song.song_id for song in tracklist_songs]
     return render_template("tracklists/tracklist_edit.jinja", tracklist=tracklist, id=id, songs=songs, selected_songs=selected_songs)
 
-@tracklist_blueprint.route("/users/<id>/tracklists/<tracklist_id>", methods=['POST'])
+@tracklist_blueprint.route("/traxstax/<id>/tracklists/<tracklist_id>", methods=['POST'])
 def update_tracklist(id, tracklist_id):
     name = request.form['title']
     cover_image = request.form['cover_image']
@@ -63,4 +63,4 @@ def update_tracklist(id, tracklist_id):
     tracklist.public = public
 
     db.session.commit()
-    return redirect(f"/users/{id}/tracklists/{tracklist_id}")
+    return redirect(f"/traxstax/{id}/tracklists/{tracklist_id}")
