@@ -1,5 +1,10 @@
 {% extends 'users/user.jinja' %} {% block content_inner %} {{ super() }}
     <h2>Tracklist are gonna go here!</h2>
+    {% for tracklist in tracklists %}
+        <div>
+            <p>{{ tracklist.name }}</p>
+        </div>
+    {% endfor %}
     <form action="/users/1/tracklists/new">
         <button type="submit">New Tracklist</button>
     </form>

@@ -14,6 +14,6 @@ def user(id):
 
 @users_blueprint.route("/users/<id>/tracklists")
 def user_tracklits(id):
-    # user = User.query.get(id)
-    # tracklists = Tracklists.query.all().filter(user.id == id)
-    return render_template("users/user_tracklists.jinja")
+    tracklists = Tracklist.query.filter(Tracklist.user_id == id).all()
+    print(tracklists)
+    return render_template("users/user_tracklists.jinja", tracklists=tracklists)
