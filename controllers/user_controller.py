@@ -12,8 +12,9 @@ def user(id):
     user = User.query.get(id)
     return render_template("users/user.jinja", user=user)
 
-@users_blueprint.route("/users/<id>/tracklists")
+@users_blueprint.route("/traxstax/<id>/tracklists")
 def user_tracklits(id):
     tracklists = Tracklist.query.filter(Tracklist.user_id == id).all()
+    user = User.query.get(id)
     print(tracklists)
-    return render_template("users/user_tracklists.jinja", tracklists=tracklists)
+    return render_template("users/user_tracklists.jinja", tracklists=tracklists, user=user)
