@@ -1,0 +1,7 @@
+{% extends 'index.jinja' %} {% block content %}
+<form action="/traxstax/login" method="POST">
+    <label for="username">Enter username</label>
+    <input type="text" name="username" id="username">
+    <button type="submit">Login</button>
+</form>
+{% endblock %}

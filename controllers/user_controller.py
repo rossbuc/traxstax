@@ -7,7 +7,7 @@ from app import db
 
 users_blueprint = Blueprint("users", __name__)
 
-@users_blueprint.route("/users/<id>")
+@users_blueprint.route("/traxstax/<id>")
 def user(id):
     user = User.query.get(id)
     return render_template("users/user.jinja", user=user)
