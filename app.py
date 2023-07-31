@@ -9,8 +9,8 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://rossbuchan@localhost:5432/
 app.config["SQLALCHEMY_ECHO"] = True
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-from seed import seed
-app.cli.add_command(seed)
+# from seed import seed
+# app.cli.add_command(seed)
 
 from controllers.user_controller import users_blueprint
 from controllers.song_controller import songs_blueprint

@@ -1,0 +1,16 @@
+{% extends 'base.jinja' %} {% block content %}
+    <div>Add Upload</div>
+    <form action="/users/<id>/upload/new" method="POST">
+        <label for="name">Title of upload</label>
+        <input type="text" name="name" id="name">
+        <label for="artist">Artist</label>
+        <input type="text" name="artist" id="artist">
+        <label for="album">Album</label>
+        <input type="text" name="album" id="album">
+        <label for="genre">Genre</label>
+        <input type="text" name="genre" id="genre">
+        <label for="artwork">Enter link to upload artwork</label>
+        <input type="text" name="artwork" id="artwork">
+        <button type="submit">Add Upload</button>
+    </form>
+{% endblock %}

@@ -1,15 +1,13 @@
 {% extends './base.jinja' %} {% block content %}
-    <section>
+    <section class="hero-user">
         <div>insert profile_image here</div>
-        <div>
-            <ul>
-                <li>Username</li>
-                <li>Bio</li>
-            </ul>
-        </div>
+        <ul>
+            <li>Username</li>
+            <li>Bio</li>
+        </ul>
     </section>
-    <div>
-        <nav>
+    <div class="content-user">
+        <nav class="nav-user">
             <ul>
                 <li>Uploads</li>
                 <li>Tracklists</li>
@@ -17,10 +15,11 @@
                 <li>Settings</li>
             </ul>
         </nav>
-        <div>
+        <div class="display-user">
             {% block content_inner %}
                 
             {% endblock %}
         </div>
     </div>
+
 {% endblock content %}

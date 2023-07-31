@@ -1,0 +1,36 @@
+* {
+    list-style: none;
+}
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.nav__options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hero-user {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.content-user {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.nav-user {
+    height: 60%;
+    width: 30%;
+}
+
+.display-user {
+    height: 60%;
+    width: 50%
+}
