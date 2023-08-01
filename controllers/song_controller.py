@@ -7,11 +7,12 @@ from app import db
 
 songs_blueprint  = Blueprint("songs", __name__)
 
-@songs_blueprint.route("/users/<id>/upload/new")
+@songs_blueprint.route("/traxstax/<id>/upload/new")
 def create_upload(id):
-    return render_template("upload.jinja")
+    user = User.query.get(id)
+    return render_template("upload.jinja", user=user)
 
-@songs_blueprint.route("/users/<id>/upload/new", methods=['POST'])
+@songs_blueprint.route("/traxstax/<id>/upload/new", methods=['POST'])
 def add_upload(id):
     name = request.form['name']
     artist = request.form['artist']
@@ -24,4 +25,4 @@ def add_upload(id):
     db.session.add(song_to_add)
     db.session.commit()
 
-    return redirect("/users/1")
+    return redirect(f"/traxstax/{id}")

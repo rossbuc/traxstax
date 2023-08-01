@@ -8,10 +8,10 @@
         </li>
         {% endfor %}
     </ul>
-    <form action="/traxstax/{{ id }}/tracklists/edit/{{ tracklist.id }}">
+    <form action="/traxstax/{{ user.id }}/tracklists/edit/{{ tracklist.id }}">
         <button type="submit">Edit Tracklist</button>
     </form>
-    <form action="/traxstax/{{ id }}/tracklists/delete/{{ tracklist.id }}">
+    <form action="/traxstax/{{ user.id }}/tracklists/delete/{{ tracklist.id }}">
         <button type="submit">Delete Tracklist</button>
     </form>
 {% endblock %}

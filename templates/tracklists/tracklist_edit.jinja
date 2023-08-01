@@ -1,5 +1,5 @@
 {% extends "base.jinja" %} {% block content %}
-    <form action="/traxstax/{{ id }}/tracklists/{{ tracklist.id }}" method="POST">
+    <form action="/traxstax/{{ user.id }}/tracklists/{{ tracklist.id }}" method="POST">
         <label for="title">Tracklist Title</label>
         <input type="text" name="title" id="title" value="{{ tracklist.name }}">
         <label for="cover_image">Cover Image</label>

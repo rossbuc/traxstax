@@ -1,3 +1,4 @@
+
 {% extends './base.jinja' %} {% block content %}
     <section class="hero-user">
         <div>insert profile_image here</div>
@@ -9,7 +10,7 @@
     <div class="content-user">
         <nav class="nav-user">
             <ul>
-                <li>Uploads</li>
+                <li><a href="/traxstax/{{ user.id }}/uploads">Uploads</a></li>
                 <li><a href="/traxstax/{{ user.id }}/tracklists">Tracklists</a></li>
                 <li>Friends</li>
                 <li>Settings</li>

@@ -10,7 +10,8 @@ tracklist_blueprint = Blueprint("tracklists", __name__)
 @tracklist_blueprint.route("/traxstax/<id>/tracklists/new")
 def new_tracklist(id):
     songs = Song.query.all()
-    return render_template("tracklists/tracklist_new.jinja", songs=songs, id=id)
+    user = User.query.get(id)
+    return render_template("tracklists/tracklist_new.jinja", songs=songs, user=user)
 
 @tracklist_blueprint.route("/traxstax/<id>/tracklists", methods=['POST'])
 def create_tracklist(id):
@@ -28,15 +29,17 @@ def create_tracklist(id):
 def show_tracklist(id, tracklist_id):
     tracklist = Tracklist.query.get(tracklist_id)
     songs = Song.query.join(Tracklists).filter(Tracklists.tracklist_id == tracklist_id)
-    return render_template("tracklists/tracklist_show.jinja", tracklist=tracklist, id=id, songs=songs)
+    user = User.query.get(id)
+    return render_template("tracklists/tracklist_show.jinja", tracklist=tracklist, user=user, songs=songs)
 
 @tracklist_blueprint.route("/traxstax/<id>/tracklists/edit/<tracklist_id>")
 def edit_tracklist(id, tracklist_id):
     tracklist = Tracklist.query.get(tracklist_id)
     songs = Song.query.all()
+    user = User.query.get(id)
     tracklist_songs = Tracklists.query.filter(Tracklists.tracklist_id == tracklist_id)
     selected_songs = [song.song_id for song in tracklist_songs]
-    return render_template("tracklists/tracklist_edit.jinja", tracklist=tracklist, id=id, songs=songs, selected_songs=selected_songs)
+    return render_template("tracklists/tracklist_edit.jinja", tracklist=tracklist, user=user, songs=songs, selected_songs=selected_songs)
 
 @tracklist_blueprint.route("/traxstax/<id>/tracklists/<tracklist_id>", methods=['POST'])
 def update_tracklist(id, tracklist_id,):
