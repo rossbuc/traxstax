@@ -17,10 +17,10 @@ def seed():
     User.query.delete()
     Song.query.delete()
 
-    user1 = User(username="rosbuc", password="12345678", profile_image="/static/img/user_1_profile_pic.jpg", bio="The first user")
-    user2 = User(username="jerrysmith", password="iamlame", profile_image="p", bio="The second user")
-    user3 = User(username="mp3daddy", password="123thethe", profile_image="p", bio="The third user")
-    user4 = User(username="waxnotflacs", password="123$moothoperator", profile_image="p", bio="The fourth user")
+    user1 = User(username="rosbuc", password="12345678", profile_image="/static/img/user1_profile_pic.jpeg", bio="The first user")
+    user2 = User(username="jerrysmith", password="iamlame", profile_image="/static/img/user2_profile_pic.jpeg", bio="The second user")
+    user3 = User(username="mp3daddy", password="123thethe", profile_image="/static/img/user3_profile_pic.webp", bio="The third user")
+    user4 = User(username="waxnotflacs", password="123$moothoperator", profile_image="/static/img/user4_profile_pic.webp", bio="The fourth user")
 
     song1 = Song(name="How High", artist="The Salsoul Orchestra", album="How High", genre="Disco")
     song2 = Song(name="Young Hearts Run Free", artist="Candi Staton", album="Young Hearts Run Free", genre="Disco")

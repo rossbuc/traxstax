@@ -1,9 +1,9 @@
 
 {% extends './base.jinja' %} {% block content %}
     <section class="hero-user">
-        <div>insert profile_image here</div>
-        <ul>
-            <li>Username</li>
+        <div class="user--profile_image__container"><img src="{{ user.profile_image }}" alt="user profile picture" class="profile-image"></div>
+        <ul class="user-details">
+            <li><h2 class="username">{{ user.username }}</h2></li>
             <li>Bio</li>
         </ul>
     </section>

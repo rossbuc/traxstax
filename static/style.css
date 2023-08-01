@@ -6,6 +6,9 @@
     padding: 0;
     font-family: 'Montserrat', sans-serif;
 }
+
+/* ========== Top Nav Bar Styling ========== */
+
 .nav {
     display: flex;
     flex-wrap: wrap;
@@ -37,12 +40,38 @@
     font-weight: 700;
 }
 
+/* ========== User Profile Styling ========== */
+
 .hero-user {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
     background-color: #0C0032;
     height: 300px;
+}
+
+.user--profile_image__container {
+    width: 25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-details {
+    padding-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width:75vw;
+}
+
+.username {
+    font-size: 32px;
+}
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .content-user {
