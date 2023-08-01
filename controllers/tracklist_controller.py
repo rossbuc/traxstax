@@ -18,7 +18,10 @@ def create_tracklist(id):
     name = request.form['title']
     cover_image = request.form['cover_image']
     user_id = id
-    public = "on" in request.form['private_public']
+    if request.form['private_public'] == "True":
+        public = True
+    elif request.form['private_public'] == "False":
+        public = False
     tracklist_to_create =  Tracklist(name=name, cover_image=cover_image, user_id=user_id, public=public)
     print(tracklist_to_create)
     db.session.add(tracklist_to_create)
@@ -46,7 +49,10 @@ def update_tracklist(id, tracklist_id,):
     name = request.form['title']
     cover_image = request.form['cover_image']
     user_id = id
-    public = "on" in request.form['private_public']
+    if request.form['private_public'] == "True":
+        public = True
+    elif request.form['private_public'] == "False":
+        public = False
 
     form_element_keys = request.form.keys()
     for key in form_element_keys:
