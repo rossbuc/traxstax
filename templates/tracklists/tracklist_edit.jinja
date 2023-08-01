@@ -5,17 +5,13 @@
         <label for="cover_image">Cover Image</label>
         <input type="text" name="cover_image" id="cover_image" value="{{ tracklist.cover_image }}">
         <label for="public">Public</label>
-        {% if tracklist.public %}
-            <input type="radio" name="private_public" id="public" value="True" checked>
-        {% else %}
-            <input type="radio" name="private_public" id="public" value="True">
-        {% endif %}
+        <input type="radio" name="private_public" id="public" value="True" {% if tracklist.public %}
+            checked
+        {% endif %}>
         <label for="private">Private</label>
-        {% if not tracklist.public %}
-            <input type="radio" name="private_public" id="private" value="False" checked>
-        {% else %}
-            <input type="radio" name="private_public" id="private" value="False">
-        {% endif %}
+        <input type="radio" name="private_public" id="private" value="False" {% if not tracklist.public %}
+            checked
+        {% endif %}>
         
         
         {% for song in songs %}
