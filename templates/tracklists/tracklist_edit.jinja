@@ -8,14 +8,13 @@
         <input type="radio" name="private_public" id="public" value="{{ tracklist.public }}">
         <label for="private">Private</label>
         <input type="radio" name="private_public" id="private">
-        <label for="songs">Add Tracks</label>
         
         {% for song in songs %}
             <div>
             {% if song.id not in selected_songs %}
-                {{ song }}
-                <label for="{{ song.name }}">{{ song.name }}</label>
-                <input type="checkbox" id="{{ song.name }}" name="song" value="{{ song.id }}">  
+                {# {{ song }} #}
+                <label for="song_{{ song.id }}">{{ song.name }}</label>
+                <input type="checkbox" id="song_{{ song.id }}" name="song_{{ song.id }}" value="{{ song.id }}">  
             {% endif %}
             </div>
         {% endfor %}

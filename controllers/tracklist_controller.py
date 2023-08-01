@@ -39,24 +39,20 @@ def edit_tracklist(id, tracklist_id):
     return render_template("tracklists/tracklist_edit.jinja", tracklist=tracklist, id=id, songs=songs, selected_songs=selected_songs)
 
 @tracklist_blueprint.route("/traxstax/<id>/tracklists/<tracklist_id>", methods=['POST'])
-def update_tracklist(id, tracklist_id):
+def update_tracklist(id, tracklist_id,):
     name = request.form['title']
     cover_image = request.form['cover_image']
     user_id = id
     public = "on" in request.form['private_public']
-    songs = Song.query.all()
-    selected_songs = []
-    for index in range(1, len(songs) + 1):
-        try:
-            selected_songs.append(request.form[f'{index}'])
-        except KeyError:
-            continue
 
-    for song in selected_songs:
-        song_id = int(song)
-        tracklist_entry = Tracklists(tracklist_id=tracklist_id, song_id=song_id)
-        db.session.add(tracklist_entry)
-        db.session.commit()
+    form_element_keys = request.form.keys()
+    for key in form_element_keys:
+        if key[0:5] == "song_":
+            song_id_split = key.split("_")
+            song_id = int(song_id_split[1])
+            tracklist_entry = Tracklists(tracklist_id=tracklist_id, song_id=song_id)
+            db.session.add(tracklist_entry)
+            db.session.commit()
 
     tracklist = Tracklist.query.get(tracklist_id)
 
@@ -67,3 +63,5 @@ def update_tracklist(id, tracklist_id):
 
     db.session.commit()
     return redirect(f"/traxstax/{id}/tracklists/{tracklist_id}")
+
+    
