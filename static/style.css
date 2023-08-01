@@ -7,6 +7,28 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+a:hover {
+    font-weight: 700;
+}
+
+.button--primary {
+    background-color: #cfc1ff;
+    color: #040012;
+    width: auto;
+    height: auto;
+    padding: 10px 15px;
+    border: 1px solid #040012;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.button--primary:hover {
+    background-color: #040012;
+    color: #cfc1ff;
+    border-color: #cfc1ff;
+}
+
 /* ========== Top Nav Bar Styling ========== */
 
 .nav {
@@ -36,10 +58,6 @@
     gap: 10px;
 }
 
-.nav-profile:hover {
-    font-weight: 700;
-}
-
 /* ========== User Profile Styling ========== */
 
 .hero-user {
@@ -67,11 +85,18 @@
 .username {
     font-size: 32px;
 }
+
 .profile-image {
     width: 200px;
     height: 200px;
     border-radius: 50%;
     overflow: hidden;
+}
+
+.user-bio {
+    font-weight: 300;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.555);
 }
 
 .content-user {
@@ -81,12 +106,43 @@
 
 .nav-user {
     height: 100vh;
-    width: 25vw;
+    width: calc(20vw - 3vw);
     background-color: #0C0032;
+    padding-top: 3vw;
+    padding-left: 3vw;
 }
 
 .display-user {
     height: 100vh;
-    width: 75vw;
+    width: calc(80vw - 4vw);
     background-color: #0c0032f0;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-options {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ========== New Tracklist Form Styling ========== */
+
+.tracklist__new label {
+    color: black;
+}
+
+.user__display--tracklist {
+    width: 75vw;
+    height: 40px;
+    border: 1px solid #040012;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.user__display--tracklist a {
+    padding: 10px;
 }

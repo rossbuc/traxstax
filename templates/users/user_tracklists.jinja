@@ -1,12 +1,11 @@
 {% extends 'users/user.jinja' %} {% block content_inner %} {{ super() }}
-    <h2>Tracklist are gonna go here!</h2>
     {% for tracklist in tracklists %}
-        <div>
+        <div class="user__display--tracklist">
             <a href="/traxstax/{{ user.id }}/tracklists/ {{ tracklist.id }}">{{ tracklist.name }}</a>
         </div>
     {% endfor %}
     <form action="/traxstax/{{ user.id }}/tracklists/new">
-        <button type="submit">New Tracklist</button>
+        <button type="submit" class="button--primary">New Tracklist</button>
     </form>
     
 {% endblock %}

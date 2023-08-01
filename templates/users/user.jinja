@@ -4,12 +4,12 @@
         <div class="user--profile_image__container"><img src="{{ user.profile_image }}" alt="user profile picture" class="profile-image"></div>
         <ul class="user-details">
             <li><h2 class="username">{{ user.username }}</h2></li>
-            <li>Bio</li>
+            <li><p class="user-bio">{{ user.bio }}</p></li>
         </ul>
     </section>
     <div class="content-user">
         <nav class="nav-user">
-            <ul>
+            <ul class="nav-options">
                 <li><a href="/traxstax/{{ user.id }}/uploads">Uploads</a></li>
                 <li><a href="/traxstax/{{ user.id }}/tracklists">Tracklists</a></li>
                 <li>Friends</li>

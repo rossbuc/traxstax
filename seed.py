@@ -17,7 +17,7 @@ def seed():
     User.query.delete()
     Song.query.delete()
 
-    user1 = User(username="rosbuc", password="12345678", profile_image="/static/img/user1_profile_pic.jpeg", bio="The first user")
+    user1 = User(username="rosbuc", password="12345678", profile_image="/static/img/user1_profile_pic.jpeg", bio="This is my site that i build with my own two hands, feel free to message me with your suggestions regarding the improved smoothness of the user experience and/or trendier design of the site in general. Please note you will not be able to do thi until i build the messages feature.")
     user2 = User(username="jerrysmith", password="iamlame", profile_image="/static/img/user2_profile_pic.jpeg", bio="The second user")
     user3 = User(username="mp3daddy", password="123thethe", profile_image="/static/img/user3_profile_pic.webp", bio="The third user")
     user4 = User(username="waxnotflacs", password="123$moothoperator", profile_image="/static/img/user4_profile_pic.webp", bio="The fourth user")
