@@ -64,4 +64,11 @@ def update_tracklist(id, tracklist_id,):
     db.session.commit()
     return redirect(f"/traxstax/{id}/tracklists/{tracklist_id}")
 
-    
+@tracklist_blueprint.route("/traxstax/<id>/tracklists/delete/<tracklist_id>")
+def delete_tracklist(id, tracklist_id):
+    tracklist_to_delete = Tracklist.query.get(tracklist_id)
+
+    db.session.delete(tracklist_to_delete)
+    db.session.commit()
+
+    return redirect(f"/traxstax/{id}/tracklists")

@@ -12,7 +12,6 @@
         {% for song in songs %}
             <div>
             {% if song.id not in selected_songs %}
-                {# {{ song }} #}
                 <label for="song_{{ song.id }}">{{ song.name }}</label>
                 <input type="checkbox" id="song_{{ song.id }}" name="song_{{ song.id }}" value="{{ song.id }}">  
             {% endif %}
