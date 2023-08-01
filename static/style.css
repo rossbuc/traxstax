@@ -1,10 +1,30 @@
 * {
     list-style: none;
+    text-decoration: none;
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 .nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    background-color: #040012;
+    height: 64px;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.nav-logo {
+    padding-bottom: 5px;
+}
+
+.nav-logo h1 {
+    font-weight: 700;
+    font-size: 32px;
+    
 }
 
 .nav__options {
@@ -13,24 +33,31 @@
     gap: 10px;
 }
 
+.nav-profile:hover {
+    font-weight: 700;
+}
+
 .hero-user {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    background-color: #0C0032;
+    height: 300px;
 }
 
 .content-user {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
 }
 
 .nav-user {
-    height: 60%;
-    width: 30%;
+    height: 100vh;
+    width: 25vw;
+    background-color: #0C0032;
 }
 
 .display-user {
-    height: 60%;
-    width: 50%
+    height: 100vh;
+    width: 75vw;
+    background-color: #0c0032f0;
 }

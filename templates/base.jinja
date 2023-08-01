@@ -3,16 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>traxstax</title>
 </head>
 <body>
 
     <nav class="nav">
-    <div>traxstax</div>
-    <ul class="nav__options">
-        <li><a href="/traxstax/{{ user.id }}">profile</a></li>
-    </ul>
+        <div class="nav-logo"><h1>traxstax</h1></div>
+        <ul class="nav__options">
+            <li><a href="/traxstax/{{ user.id }}" class="nav-profile">profile</a></li>
+        </ul>
     </nav>
 
     {% block content %}

@@ -1,6 +1,6 @@
 {% extends 'base.jinja' %} {% block content %}
     <div>Add Upload</div>
-    <form action="/traxstax/{{ id }}/upload/new" method="POST">
+    <form action="/traxstax/{{ user.id }}/upload/new" method="POST">
         <label for="name">Title of upload</label>
         <input type="text" name="name" id="name">
         <label for="artist">Artist</label>
