@@ -5,30 +5,31 @@
             <input type="text" name="title" id="title" class="form--tracklist__title" value="{{ tracklist.name }}">
             <input type="text" name="cover_image" id="cover_image" class="form--tracklist__cover_image" value="{{ tracklist.cover_image }}" placeholder="Artwork link">
             <div class="form--public-private">
-                <div class="form--radio__option">
-                    <label for="public">Public</label>
+                <label for="public" class="form--radio__option checkbox">Public
                     <input type="radio" name="private_public" id="public" value="True" {% if tracklist.public %}
                         checked
                     {% endif %}>
-                </div>
-                <div class="form--radio__option">
-                    <label for="private">Private</label>
+                    <span class="input--checkbox"></span>
+                </label>
+                    <label for="private" class="form--radio__option checkbox">Private
                     <input type="radio" name="private_public" id="private" value="False" {% if not tracklist.public %}
                         checked
                     {% endif %}>
-                </div>
+                    <span class="input--checkbox"></span>
+                </label>
             </div>
         </div>
         <div class="list--tracklist wrapper--tracklist">
             {% for song in songs %}
                 {% if song.id not in selected_songs %}
-                <div class="track">
-                    <input type="checkbox" id="song_{{ song.id }}" name="song_{{ song.id }}" value="{{ song.id }}"> 
-                    <label for="song_{{ song.id }}" class="track--info">
-                        <h3>{{ song.name }}</h3>
-                        <h4>{{ song.artist }}</h4>
+                    <label for="song_{{ song.id }}" class="track checkbox">
+                        <input type="checkbox" id="song_{{ song.id }}" name="song_{{ song.id }}" value="{{ song.id }}">
+                        <span class="input--checkbox"></span>
+                        <div class="track--info">
+                            <h3>{{ song.name }}</h3>
+                            <h4>{{ song.artist }}</h4>
+                        </div>
                     </label> 
-                </div>
                 {% endif %}
             {% endfor %}
         </div>

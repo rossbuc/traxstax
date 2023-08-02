@@ -1,16 +1,12 @@
 {% extends 'base.jinja' %} {% block content %}
-    <div>Add Upload</div>
-    <form action="/traxstax/{{ user.id }}/upload/new" method="POST">
-        <label for="name">Title of upload</label>
-        <input type="text" name="name" id="name">
-        <label for="artist">Artist</label>
-        <input type="text" name="artist" id="artist">
-        <label for="album">Album</label>
-        <input type="text" name="album" id="album">
-        <label for="genre">Genre</label>
-        <input type="text" name="genre" id="genre">
-        <label for="artwork">Enter link to upload artwork</label>
-        <input type="text" name="artwork" id="artwork">
-        <button type="submit">Add Upload</button>
-    </form>
+    <div class="wrapper--form--upload">
+        <form action="/traxstax/{{ user.id }}/upload/new" method="POST" class="form--upload">
+            <input type="text" name="name" id="name" placeholder="Title of upload" class="input--upload__primary">
+            <input type="text" name="artist" id="artist" placeholder="Artist" class="input--upload__secondary">
+            <input type="text" name="album" id="album" placeholder="Album" class="input--upload__secondary">
+            <input type="text" name="genre" id="genre" placeholder="Genre" class="input--upload__secondary">
+            <input type="text" name="artwork" id="artwork" placeholder="Enter URL for artwork" class="input--upload__link">
+            <button type="submit" class="button--primary button--upload">Add Upload</button>
+        </form>
+    </div>
 {% endblock %}

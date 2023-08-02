@@ -4,14 +4,14 @@
             <input type="text" name="title" id="title" placeholder="Tracklist Title" class="form--tracklist__title">
             <input type="text" name="cover_image" id="cover_image" placeholder="Artwork Link" class="form--tracklist__cover_image">
             <div class="form--public-private">
-                <div class="form--radio__option">
-                    <label for="public">Public</label>
+                <label for="public" class="form--radio__option checkbox">Public
                     <input type="radio" name="private_public" id="public" value="True">
-                </div>
-                <div class="form--radio__option">
-                    <label for="private">Private</label>
+                    <span class="input--checkbox"></span>
+                </label>
+                <label for="private" class="form--radio__option checkbox">Private
                     <input type="radio" name="private_public" id="private" value="False">
-                </div>
+                    <span class="input--checkbox"></span>
+                </label>
             </div>
             <label for="songs" class="form--tracklist__add_tracks">Add Tracks</label>
             <button type="submit" class="button--primary form--button__submit">Create Tracklist</button>
