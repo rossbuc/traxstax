@@ -21,4 +21,5 @@ def user_tracklits(id):
 @users_blueprint.route("/traxstax/<id>/uploads")
 def user_uploads(id):
     user = User.query.get(id)
-    return render_template("users/user_uploads.jinja", user=user)
+    songs = Song.query.filter(Song.user_id == id).all()
+    return render_template("users/user_uploads.jinja", user=user, songs=songs)

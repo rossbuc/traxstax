@@ -19,10 +19,20 @@ def add_upload(id):
     album = request.form['album']
     genre = request.form['genre']
     artwork = request.form['artwork']
+    user_id = id
 
-    song_to_add = Song(name=name, artist=artist, album=album, genre=genre, artwork=artwork)
+    song_to_add = Song(name=name, artist=artist, album=album, genre=genre, artwork=artwork, user_id=user_id)
 
     db.session.add(song_to_add)
     db.session.commit()
 
     return redirect(f"/traxstax/{id}")
+
+@songs_blueprint.route("/traxstax/<id>/upload/delete/<song_id>", methods=['POST'])
+def delete_upload(id, song_id):
+    song_to_delete = Song.query.get(song_id)
+
+    db.session.delete(song_to_delete)
+    db.session.commit()
+
+    return redirect(f'/traxstax/{id}/uploads')
