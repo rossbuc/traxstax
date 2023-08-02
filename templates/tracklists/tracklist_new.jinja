@@ -1,14 +1,20 @@
 {% extends 'base.jinja' %} {% block content %}
-    <form action="/traxstax/{{ user.id }}/tracklists" method="POST" class="tracklist__new">
-        <label for="title">Tracklist Title</label>
-        <input type="text" name="title" id="title">
-        <label for="cover_image">Cover Image</label>
-        <input type="text" name="cover_image" id="cover_image">
-        <label for="public">Public</label>
-        <input type="radio" name="private_public" id="public" value="True">
-        <label for="private">Private</label>
-        <input type="radio" name="private_public" id="private" value="False">
-        <label for="songs">Add Tracks</label>
-        <button type="submit">Create Tracklist</button>
-    </form>
+    <section class="tracklist__new">
+        <form action="/traxstax/{{ user.id }}/tracklists" method="POST" class="form--tracklist__new">
+            <input type="text" name="title" id="title" placeholder="Tracklist Title" class="form--tracklist__title">
+            <input type="text" name="cover_image" id="cover_image" placeholder="Artwork Link" class="form--tracklist__cover_image">
+            <div class="form--public-private">
+                <div class="form--radio__option">
+                    <label for="public">Public</label>
+                    <input type="radio" name="private_public" id="public" value="True">
+                </div>
+                <div class="form--radio__option">
+                    <label for="private">Private</label>
+                    <input type="radio" name="private_public" id="private" value="False">
+                </div>
+            </div>
+            <label for="songs" class="form--tracklist__add_tracks">Add Tracks</label>
+            <button type="submit" class="button--primary form--button__submit">Create Tracklist</button>
+        </form>
+    </section>
 {% endblock %}

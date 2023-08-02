@@ -7,20 +7,36 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.background--gradient {
+    background: linear-gradient(to bottom right, rgb(4, 0, 18, 0.9), rgba(12, 0, 50, 0.5));
+    height: 100vh;
+    width: 100vw;
+}
+
 a:hover {
     font-weight: 700;
 }
 
+.logo {
+    height: 100px;
+    width:100px;
+}
+
+.login--hero {
+    height: 100vh;
+    width: 100vw;
+}
+
 .button--primary {
-    background-color: #cfc1ff;
-    color: #040012;
+    background-color: #040012;
+    color: rgb(221, 213, 255);
     width: auto;
     height: auto;
     padding: 10px 15px;
     border: 1px solid #040012;
     border-radius: 40px;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .button--primary:hover {
@@ -63,7 +79,8 @@ a:hover {
 .hero-user {
     display: flex;
     flex-wrap: wrap;
-    background-color: #0C0032;
+    /* background-color: #0C0032; */
+    background-color: transparent;
     height: 300px;
 }
 
@@ -107,7 +124,8 @@ a:hover {
 .nav-user {
     height: 100vh;
     width: calc(20vw - 3vw);
-    background-color: #0C0032;
+    /* background-color: #0C0032; */
+    background-color: transparent;
     padding-top: 3vw;
     padding-left: 3vw;
 }
@@ -115,7 +133,8 @@ a:hover {
 .display-user {
     height: 100vh;
     width: calc(80vw - 4vw);
-    background-color: #0c0032f0;
+    /* background-color: #0c0032f0; */
+    background-color: transparent;
     padding: 2vw;
     display: flex;
     flex-direction: column;
@@ -126,12 +145,6 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-/* ========== New Tracklist Form Styling ========== */
-
-.tracklist__new label {
-    color: black;
 }
 
 .user__display--tracklist {
@@ -145,4 +158,68 @@ a:hover {
 
 .user__display--tracklist a {
     padding: 10px;
+}
+
+/* ========== New Tracklist Form Styling ========== */
+
+input[type=text] {
+    border: none;
+    border-bottom: 0.5px solid rgb(221, 213, 255);
+}
+
+input[type=text]::placeholder {
+    color: rgba(221, 213, 255, 0.408);
+}
+
+.form--tracklist__new {
+    display: flex;
+    flex-direction: column;
+    width: 75vw;
+    gap: 4vw
+}
+
+.tracklist__new {
+    height: calc(100vh - 64px - 240px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px;
+}
+
+.form--tracklist__title {
+    background-color: transparent;
+    height: 10vh;
+    font-size: 64px;
+    color: rgba(221, 213, 255, 0.408);
+}
+
+.form--tracklist__cover_image {
+    background-color: transparent;
+    height: 5vh;
+    font-size: 18px;
+    color: rgba(221, 213, 255, 0.408);
+}
+
+.form--public-private {
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+}
+
+.form--radio__option {
+    display: flex;
+    flex-direction: column;
+    color: rgba(221, 213, 255, 0.408);
+}
+
+.form--radio__option label {
+    color: rgba(221, 213, 255, 0.408);
+}
+
+.form--tracklist__add_tracks {
+    color: rgb(221, 213, 255);
+}
+
+.form--button__submit {
+    width: 15vw;
 }
