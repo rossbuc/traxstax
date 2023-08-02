@@ -187,6 +187,11 @@ input[type=text]::placeholder {
     color: rgba(221, 213, 255, 0.408);
 }
 
+input[type=text]:focus {
+    color: rgb(221, 213, 255);
+    outline: none;
+}
+
 .form--tracklist__new {
     display: flex;
     flex-direction: column;
