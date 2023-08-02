@@ -1,27 +1,40 @@
 {% extends "base.jinja" %} {% block content %}
-    <form action="/traxstax/{{ user.id }}/tracklists/{{ tracklist.id }}" method="POST">
-        <label for="title">Tracklist Title</label>
-        <input type="text" name="title" id="title" value="{{ tracklist.name }}">
-        <label for="cover_image">Cover Image</label>
-        <input type="text" name="cover_image" id="cover_image" value="{{ tracklist.cover_image }}">
-        <label for="public">Public</label>
-        <input type="radio" name="private_public" id="public" value="True" {% if tracklist.public %}
-            checked
-        {% endif %}>
-        <label for="private">Private</label>
-        <input type="radio" name="private_public" id="private" value="False" {% if not tracklist.public %}
-            checked
-        {% endif %}>
-        
-        
-        {% for song in songs %}
-            <div>
-            {% if song.id not in selected_songs %}
-                <label for="song_{{ song.id }}">{{ song.name }}</label>
-                <input type="checkbox" id="song_{{ song.id }}" name="song_{{ song.id }}" value="{{ song.id }}">  
-            {% endif %}
+    <section class="main--tracklist__edit">
+        <form action="/traxstax/{{ user.id }}/tracklists/{{ tracklist.id }}" method="POST">
+        <div class="form--tracklist__edit">
+            <input type="text" name="title" id="title" class="form--tracklist__title" value="{{ tracklist.name }}">
+            <input type="text" name="cover_image" id="cover_image" class="form--tracklist__cover_image" value="{{ tracklist.cover_image }}" placeholder="Artwork link">
+            <div class="form--public-private">
+                <div class="form--radio__option">
+                    <label for="public">Public</label>
+                    <input type="radio" name="private_public" id="public" value="True" {% if tracklist.public %}
+                        checked
+                    {% endif %}>
+                </div>
+                <div class="form--radio__option">
+                    <label for="private">Private</label>
+                    <input type="radio" name="private_public" id="private" value="False" {% if not tracklist.public %}
+                        checked
+                    {% endif %}>
+                </div>
             </div>
-        {% endfor %}
-        <button type="submit">Save Changes</button>
-    </form>
+        </div>
+        <div class="list--tracklist wrapper--tracklist">
+            {% for song in songs %}
+                {% if song.id not in selected_songs %}
+                <div class="track">
+                    <input type="checkbox" id="song_{{ song.id }}" name="song_{{ song.id }}" value="{{ song.id }}"> 
+                    <label for="song_{{ song.id }}" class="track--info">
+                        <h3>{{ song.name }}</h3>
+                        <h4>{{ song.artist }}</h4>
+                    </label> 
+                </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="wrapper--button">
+            <button type="submit" class="button--primary">Save Changes</button>
+        </div>
+        </form>
+    </section>
 {% endblock content %}

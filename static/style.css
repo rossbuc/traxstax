@@ -181,6 +181,7 @@ a:hover {
 input[type=text] {
     border: none;
     border-bottom: 0.5px solid rgb(221, 213, 255);
+    color: rgb(221, 213, 255);
 }
 
 input[type=text]::placeholder {
@@ -257,8 +258,7 @@ input[type=text]:focus {
 }
 
 .wrapper--tracklist {
-    /* display: flex;
-    justify-content: center; */
+    height: 75vh;
     padding: 5vh 8vw;
     margin: auto;
     display: flex;
@@ -305,4 +305,25 @@ input[type=text]:focus {
     padding: 0 13vw;
     justify-content: space-between;
     gap: 3vw;
+}
+
+/* ========== Edit Tracklist Form Styling ========== */
+
+.form--tracklist__edit {
+    height: calc(60vh - 64px - 240px);
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    padding: 60px 120px;
+    gap: 2vh;
+}
+
+.main--tracklist__edit {
+    height: 106vh;
+    overflow: scroll;
+}
+
+.wrapper--button {
+    padding: 32px 120px;
 }

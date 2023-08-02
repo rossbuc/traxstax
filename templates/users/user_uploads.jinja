@@ -1,6 +1,6 @@
 {% extends 'users/user.jinja' %} {% block content_inner %}  {{ super() }}
     <h1>Uploads Go Here</h1>
     <form action="/traxstax/{{ user.id }}/upload/new">
-        <button type="submit">add upload</button>
+        <button type="submit" class="button--primary">add upload</button>
     </form>
 {% endblock %}
