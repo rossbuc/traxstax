@@ -1,17 +1,26 @@
 {% extends 'base.jinja' %} {% block content %}
-    <h1>Tracklist</h1>
-    <ul>
-        {% for song in songs %}
-        <li>
-        <h3>{{ song.name }}</h3>
-        <h4>{{ song.artist }}</h4>
-        </li>
-        {% endfor %}
-    </ul>
-    <form action="/traxstax/{{ user.id }}/tracklists/edit/{{ tracklist.id }}">
-        <button type="submit">Edit Tracklist</button>
-    </form>
-    <form action="/traxstax/{{ user.id }}/tracklists/delete/{{ tracklist.id }}">
-        <button type="submit">Delete Tracklist</button>
-    </form>
+    <section class="main--tracklist">
+        <div class="wrapper--tracklist">
+            <div class="header--tracklist"><h1>{{ tracklist.name }}</h1></div>
+            <ul class="list--tracklist">
+                {% for song in songs %}
+                <li class="track">
+                <div><img src="{{ song.artwork }}" alt="album artwork" class="track--image"></div>
+                <div class="track--info">
+                    <h3>{{ song.name }}</h3>
+                    <h4>{{ song.artist }}</h4>
+                </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="buttons--tracklist">
+            <form action="/traxstax/{{ user.id }}/tracklists/edit/{{ tracklist.id }}">
+                <button type="submit" class="button--primary">Edit Tracklist</button>
+            </form>
+            <form action="/traxstax/{{ user.id }}/tracklists/delete/{{ tracklist.id }}">
+                <button type="submit" class="button--secondary">Delete Tracklist</button>
+            </form>
+        </div>
+    </section>
 {% endblock %}

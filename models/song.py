@@ -8,5 +8,5 @@ class Song(db.Model):
     artist = db.Column(db.String(64))
     album = db.Column(db.String(64))
     genre = db.Column(db.String(64))
-    artwork = db.Column(db.String(64))
+    artwork = db.Column(db.String(64), default="/static/img/default_music_icon.jpeg")
     tracklists = db.relationship('Tracklists', backref='song')

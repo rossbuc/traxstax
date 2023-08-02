@@ -9,7 +9,7 @@
 
 .background--gradient {
     background: linear-gradient(to bottom right, rgb(4, 0, 18, 0.9), rgba(12, 0, 50, 0.5));
-    height: 100vh;
+    height: 115vh;
     width: 100vw;
 }
 
@@ -40,11 +40,25 @@ a:hover {
 }
 
 .button--primary:hover {
-    background-color: #040012;
-    color: #cfc1ff;
     border-color: #cfc1ff;
 }
 
+.button--secondary {
+    background-color: transparent;
+    color: #040012;
+    width: auto;
+    height: auto;
+    padding: 10px 15px;
+    border: 1px solid #040012;
+    border-radius: 40px;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.button--secondary:hover {
+    border-color: #cfc1ff;
+    color: #cfc1ff;
+}
 /* ========== Top Nav Bar Styling ========== */
 
 .nav {
@@ -119,10 +133,11 @@ a:hover {
 .content-user {
     display: flex;
     flex-wrap: wrap;
+    height: calc(100vh - 300px);
 }
 
 .nav-user {
-    height: 100vh;
+    height: calc(100vh - 300px);
     width: calc(20vw - 3vw);
     /* background-color: #0C0032; */
     background-color: transparent;
@@ -131,13 +146,14 @@ a:hover {
 }
 
 .display-user {
-    height: 100vh;
+    height: calc(100vh - 300px);
     width: calc(80vw - 4vw);
     /* background-color: #0c0032f0; */
     background-color: transparent;
     padding: 2vw;
     display: flex;
     flex-direction: column;
+    overflow: scroll;
     gap: 10px;
 }
 
@@ -222,4 +238,66 @@ input[type=text]::placeholder {
 
 .form--button__submit {
     width: 15vw;
+}
+
+
+/* ========== Tracklist Display Styling ========== */
+
+.main--tracklist {
+    height: 100vh;
+}
+
+.header--tracklist h1 {
+    font-size: 28px;
+}
+
+.wrapper--tracklist {
+    /* display: flex;
+    justify-content: center; */
+    padding: 5vh 8vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.list--tracklist {
+    background: linear-gradient(to bottom right, rgba(138, 112, 223, 0.087), rgba(138, 112, 223, 0.024));
+    border: 3px solid #04001296;
+    border-radius: 20px;
+    width: calc(83.7vw - 4vw);
+    height: 75vh;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    overflow: scroll;
+}
+
+.track {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3vw;
+}
+
+.track--image {
+    height: 5vh;
+    opacity: 0.5;
+}
+
+.track--info h3 {
+    font-size: 16px;
+}
+
+.track--info h4 {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.buttons--tracklist {
+    display: flex;
+    padding: 0 13vw;
+    justify-content: space-between;
+    gap: 3vw;
 }
