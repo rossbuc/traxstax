@@ -81,3 +81,13 @@ def delete_tracklist(id, tracklist_id):
     db.session.commit()
 
     return redirect(f"/traxstax/{id}/tracklists")
+
+@tracklist_blueprint.route("/traxstax/<id>/<tracklist_id>/delete/<song_id>", methods=['POST'])
+def delete_song_from_tracklist(id, tracklist_id, song_id):
+    song_to_delete_from_tracklist = Tracklists.query.filter(Tracklists.tracklist_id==tracklist_id, Tracklists.song_id==song_id).one()
+
+    db.session.delete(song_to_delete_from_tracklist)
+    db.session.commit()
+
+    return redirect(f'/traxstax/{id}/tracklists/{tracklist_id}')
+

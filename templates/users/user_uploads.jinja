@@ -11,13 +11,13 @@
                 </div>
             </div>
             <form action="/traxstax/{{ user.id }}/upload/delete/{{ song.id }}" method="POST">
-                <button type="submit" class="button--primary">Delete Upload</button>
+                <button type="submit" class="button--secondary">Delete Upload</button>
             </form>
             </li>
             {% endfor %}
         </ul>
     </div>
     <form action="/traxstax/{{ user.id }}/upload/new">
-        <button type="submit" class="button--primary">add upload</button>
+        <button type="submit" class="button--primary">Add Upload</button>
     </form>
 {% endblock %}

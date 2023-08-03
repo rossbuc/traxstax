@@ -149,7 +149,7 @@ a:hover {
 .nav__options {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 15px;
 }
 
 /* ========== User Profile Styling ========== */
@@ -351,6 +351,11 @@ input[type=text]:focus {
     gap: 3vw;
 }
 
+.track-show {
+    justify-content: space-between;
+    gap: 3vw;
+}
+
 .track--image {
     height: 5vh;
     opacity: 0.5;
@@ -369,6 +374,11 @@ input[type=text]:focus {
     display: flex;
     padding: 0 13vw;
     justify-content: space-between;
+    gap: 3vw;
+}
+
+.track--elements__left {
+    display: flex;
     gap: 3vw;
 }
 
