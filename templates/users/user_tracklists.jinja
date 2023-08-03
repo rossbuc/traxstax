@@ -1,7 +1,8 @@
 {% extends 'users/user.jinja' %} {% block content_inner %} {{ super() }}
     {% for tracklist in tracklists %}
         <div class="user__display--tracklist">
-            <a href="/traxstax/{{ user.id }}/tracklists/ {{ tracklist.id }}">{{ tracklist.name }}</a>
+            <div><img src="{{ tracklist.cover_image }}" alt="" class="image--tracklist"></div>
+            <a href="/traxstax/{{ user.id }}/tracklists/ {{ tracklist.id }}"><h3 class="text--tracklist__title">{{ tracklist.name }}</h3></a>
         </div>
     {% endfor %}
     <form action="/traxstax/{{ user.id }}/tracklists/new">

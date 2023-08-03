@@ -229,7 +229,7 @@ a:hover {
 
 .user__display--tracklist {
     width: 75vw;
-    height: 40px;
+    height: auto;
     border: 1px solid #040012;
     border-radius: 10px;
     display: flex;
@@ -238,6 +238,21 @@ a:hover {
 
 .user__display--tracklist a {
     padding: 10px;
+}
+
+.image--tracklist {
+    height: 10vh;
+    margin: 2vh;
+    border-radius: 30%;
+}
+
+.text--tracklist__title {
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.text--tracklist__title:hover {
+    font-weight: 600;
 }
 
 /* ========== New Tracklist Form Styling ========== */
