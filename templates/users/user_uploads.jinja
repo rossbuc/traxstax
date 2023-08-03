@@ -1,13 +1,14 @@
 {% extends 'users/user.jinja' %} {% block content_inner %}  {{ super() }}
-    <h1>Uploads</h1>
     <div class="user--uploads">
-        <ul class="list--tracklist">
+        <ul class="list--tracklist list--uploads">
             {% for song in songs %}
-            <li class="track">
-            <div><img src="{{ song.artwork }}" alt="album artwork" class="track--image"></div>
-            <div class="track--info">
-                <h3>{{ song.name }}</h3>
-                <h4>{{ song.artist }}</h4>
+            <li class="track upload">
+            <div class="upload--elements__left">
+                <div><img src="{{ song.artwork }}" alt="album artwork" class="upload--image"></div>
+                <div class="track--info">
+                    <h3>{{ song.name }}</h3>
+                    <h4>{{ song.artist }}</h4>
+                </div>
             </div>
             <form action="/traxstax/{{ user.id }}/upload/delete/{{ song.id }}" method="POST">
                 <button type="submit" class="button--primary">Delete Upload</button>

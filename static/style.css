@@ -429,3 +429,23 @@ input[type=text]:focus {
 .button--upload {
     width: 15vw;
 }
+
+/* ========== Upload Form Styling ========== */
+
+.list--uploads {
+    width: 70vw;
+}
+
+.upload--elements__left {
+    display: flex;
+    gap: 2vw;
+}
+
+.upload {
+    display: flex;
+    justify-content: space-between;
+}
+
+.upload--image {
+    height: 8vh
+}
