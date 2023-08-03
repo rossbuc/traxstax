@@ -189,6 +189,7 @@ a:hover {
 }
 
 .user-bio {
+    padding-right: 12vh;
     font-weight: 300;
     font-size: 16px;
     color: rgba(255, 255, 255, 0.555);
@@ -242,6 +243,7 @@ a:hover {
 
 .image--tracklist {
     height: 10vh;
+    width: 10vh;
     margin: 2vh;
     border-radius: 30%;
 }
@@ -255,6 +257,9 @@ a:hover {
     font-weight: 600;
 }
 
+.button--form__new-tracklist {
+    margin-top: 2vh;
+}
 /* ========== New Tracklist Form Styling ========== */
 
 input[type=text] {
