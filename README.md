@@ -23,14 +23,14 @@ Once the basic functionality of the app is achieved, possible enhancements inclu
 
 Ensure you're in the root directory and first you will need to install the necessary modules. To do this run the following commmands:
 
-- **pip install Flask**
-- **pip install Flask-SQLAlchemy**
-- **pip install Flask-Migrate**
+- `pip install Flask`
+- `pip install Flask-SQLAlchemy`
+- `pip install Flask-Migrate`
 
 Then you will have to run the seeds which you can do using the command:
 
-- **flask run seeds**
+- `flask run seeds`
 
 Then you are ready to run the app, using the command below, and open it on the browser. Once you start the app it should be running on _http://localhost:4999_.
 
-- **flask run**
+- `flask run`
